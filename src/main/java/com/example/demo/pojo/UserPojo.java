@@ -1,25 +1,21 @@
-package com.example.springboot_1.pojo;
+package com.example.demo.pojo;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.Getter;
-
-import java.awt.*;
-
 
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class FutsalPojo {
+public class UserPojo {
+
     private Integer id;
     private String name;
-    private Image image;
-
-
-
+    private String age;
+    private String email;
 
 
 }

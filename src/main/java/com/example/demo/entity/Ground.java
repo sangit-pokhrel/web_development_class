@@ -1,28 +1,32 @@
-package com.example.springboot_1.entity;
+package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 
 @Entity
 @Table(name="ground_info")
-
+@Setter
+@Getter
 public class Ground {
-    @Setter
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parameter_setup_seq_gen")
+
     @SequenceGenerator(name = "parameter_setup_seq_gen", sequenceName = "parameters_setup_seq", allocationSize = 1)
-    @Id
+     @Id
     private Integer id;
 
-    @Setter
-    @Column(name="name")
-    private String name;
+     @Column(name="name")
+     private String name;
 
-    @Column(name="image")
-    private String image;
+     @Column(name="image")
+      private String image;
 
-    @OneToMany(mappedBy = "ground",fetch = FetchType.LAZY,cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Book> books;
+
+     @OneToMany(mappedBy = "ground",cascade = CascadeType.ALL)
+     private List<Book> books;
+
+
 
 }

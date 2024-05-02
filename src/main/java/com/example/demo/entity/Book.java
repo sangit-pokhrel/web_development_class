@@ -1,9 +1,13 @@
-package com.example.springboot_1.entity;
+package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name="book_info")
+@Setter
+@Getter
 
 public class Book {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parameter_setup_seq_gen")
@@ -21,10 +25,14 @@ public class Book {
     @Column(name="book_status")
     private String book_status;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="ground_id",referencedColumnName = "id",foreignKey = @ForeignKey(name="fk_book_user_id"))
+    @JoinColumn(name="ground_id",referencedColumnName = "id",foreignKey = @ForeignKey(name="fk_book_groundid"))
     private Ground ground;
+
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="User_id",referencedColumnName = "id",foreignKey = @ForeignKey(name="fk_book_userid"))
+    private User user;
+
 
 
 }
