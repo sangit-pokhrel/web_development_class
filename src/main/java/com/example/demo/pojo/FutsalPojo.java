@@ -1,5 +1,6 @@
 package com.example.demo.pojo;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,13 +10,12 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class UserPojo {
+public class FutsalPojo {
 
     private Integer id;
-    private String name;
-    private String age;
-    private String email;
 
+    private String groundName;
+
+    private String groundImage;
 
 }

@@ -1,5 +1,8 @@
 package com.example.demo.pojo;
 
+
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,16 +10,19 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class BookPojo {
-    private Integer id;
-    private Integer book_time;
-    private Integer book_date;
-    private String book_status;
-    private Integer ground_id;
-    private Integer User_id;
 
+    private Integer id;
+
+    @NotEmpty(message = "date is required")
+    private String date;
+
+    @NotNull(message = "ground is required")
+    private Integer ground_id;
+
+    @NotNull(message = "user id required")
+    private Integer user_id;
 
 }
