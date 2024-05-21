@@ -9,8 +9,8 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GroundPojo {
-    private Integer id;
-    private String name;
-    private String image;
+public class GlobalApiResponse<T> {
+    private Integer status;
+    private String message;
+    private T data;
 }

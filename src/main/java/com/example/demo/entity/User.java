@@ -1,35 +1,43 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.awt.*;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
-@Table(name="User_info")
-@Setter
-@Getter
-
+@Table(name="users", uniqueConstraints = {
+        @UniqueConstraint(name = "unique_user_name",
+                columnNames = {"user_name"})
+})
 public class User {
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parameter_setup_seq_gen")
-    @SequenceGenerator(name = "parameter_setup_seq_gen", sequenceName = "parameters_setup_seq", allocationSize = 1)
+
+
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "information_seq_gen")
+    @SequenceGenerator(name = "information_seq_gen",sequenceName = "information_seq",allocationSize = 1,initialValue = 1)
     @Id
     private Integer id;
 
-     @Column(name="name")
-      private String name;
+    @Column(name="user_name",length = 255)
+    private String userName;
 
-     @Column(name="age")
-     private String age;
+    @Column(name="address",length=255)
+    private String address;
+
+    @Column(name="contact",length = 255)
+    private  Integer contactNumber;
 
 
-     @Column(name="email")
-       private String email;
-
-
-//     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-//    private List<User> users;
-
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "users_roles",
+            foreignKey = @ForeignKey(name = "FK_users_roles_userId"),
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseForeignKey = @ForeignKey(name = "FK_users_roles_roleId"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
+    )
+    private List<Role> roles;
 }
+
+//
+//uniqueConstraints = @UniqueConstraint(name = "UNIQUE_users_roles_userIdRoleId",
+//        columnNames = {"user_id", "role_id"}
