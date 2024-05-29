@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            width: 100%;
+        }
+        .chess-board {
+            display: grid;
+            grid-template-columns: repeat(8, 100px);
+            grid-template-rows: repeat(8, 100px);
+            gap: 0;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+        }
+        .chess-board .square {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+        }
+        .chess-board .black {
+            background-color: #000000;
+            color: #fff;
+        }
+        .chess-board .white {
+            background-color: #f7f7df;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="chess-board">
+        <!-- Row 8 -->
+        <div class="square white">&#9820;</div> <!-- Black Rook -->
+        <div class="square black">&#9822;</div> <!-- Black Knight -->
+        <div class="square white">&#9821;</div> <!-- Black Bishop -->
+        <div class="square black">&#9819;</div> <!-- Black Queen -->
+        <div class="square white">&#9818;</div> <!-- Black King -->
+        <div class="square black">&#9821;</div> <!-- Black Bishop -->
+        <div class="square white">&#9822;</div> <!-- Black Knight -->
+        <div class="square black">&#9820;</div> <!-- Black Rook -->
+        
+        <!-- Row 7 -->
+        <div class="square black">&#9823;</div> <!-- Black Pawn -->
+        <div class="square white">&#9823;</div> <!-- Black Pawn -->
+        <div class="square black">&#9823;</div> <!-- Black Pawn -->
+        <div class="square white">&#9823;</div> <!-- Black Pawn -->
+        <div class="square black">&#9823;</div> <!-- Black Pawn -->
+        <div class="square white">&#9823;</div> <!-- Black Pawn -->
+        <div class="square black">&#9823;</div> <!-- Black Pawn -->
+        <div class="square white">&#9823;</div> <!-- Black Pawn -->
+        
+        <!-- Row 6 -->
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        
+        <!-- Row 5 -->
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        
+        <!-- Row 4 -->
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        
+        <!-- Row 3 -->
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        
+        <!-- Row 2 -->
+        <div class="square white">&#9817;</div> <!-- White Pawn -->
+        <div class="square black">&#9817;</div> <!-- White Pawn -->
+        <div class="square white">&#9817;</div> <!-- White Pawn -->
+        <div class="square black">&#9817;</div> <!-- White Pawn -->
+        <div class="square white">&#9817;</div> <!-- White Pawn -->
+        <div class="square black">&#9817;</div> <!-- White Pawn -->
+        <div class="square white">&#9817;</div> <!-- White Pawn -->
+        <div class="square black">&#9817;</div> <!-- White Pawn -->
+        
+        <!-- Row 1 -->
+        <div class="square black">&#9814;</div> <!-- White Rook -->
+        <div class="square white">&#9816;</div> <!-- White Knight -->
+        <div class="square black">&#9815;</div> <!-- White Bishop -->
+        <div class="square white">&#9813;</div> <!-- White Queen -->
+        <div class="square black">&#9812;</div> <!-- White King -->
+        <div class="square white">&#9815;</div> <!-- White Bishop -->
+        <div class="square black">&#9816;</div> <!-- White Knight -->
+        <div class="square white">&#9814;</div> <!-- White Rook -->
+    </div>
+</body>
+</html>

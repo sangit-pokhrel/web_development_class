@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrom Board</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .carrom-board {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            background-color: #f1c27d;
+            border: 20px solid #d2691e;
+            box-sizing: border-box;
+        }
+        .carrom-board .pocket {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        .pocket.top-left {
+            top: -15px;
+            left: -15px;
+        }
+        .pocket.top-right {
+            top: -15px;
+            right: -15px;
+        }
+        .pocket.bottom-left {
+            bottom: -15px;
+            left: -15px;
+        }
+        .pocket.bottom-right {
+            bottom: -15px;
+            right: -15px;
+        }
+        .striker {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 50%;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .coin {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .coin.white {
+            background-color: white;
+            border: 2px solid black;
+        }
+        .coin.black {
+            background-color: black;
+        }
+        .coin.red {
+            background-color: red;
+            border: 2px solid black;
+        }
+        .coin-1 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .coin-2 { top: 47%; left: 53%; transform: translate(-50%, -50%); }
+        .coin-3 { top: 47%; left: 47%; transform: translate(-50%, -50%); }
+        .coin-4 { top: 53%; left: 53%; transform: translate(-50%, -50%); }
+        .coin-5 { top: 53%; left: 47%; transform: translate(-50%, -50%); }
+        .coin-6 { top: 45%; left: 50%; transform: translate(-50%, -50%); }
+        .coin-7 { top: 50%; left: 45%; transform: translate(-50%, -50%); }
+        .coin-8 { top: 55%; left: 50%; transform: translate(-50%, -50%); }
+        .coin-9 { top: 50%; left: 55%; transform: translate(-50%, -50%); }
+        .lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .lines::before, .lines::after {
+            content: '';
+            position: absolute;
+            border: 2px solid black;
+        }
+        .lines::before {
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+        }
+        .lines::after {
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="carrom-board">
+        <div class="pocket top-left"></div>
+        <div class="pocket top-right"></div>
+        <div class="pocket bottom-left"></div>
+        <div class="pocket bottom-right"></div>
+        <div class="striker"></div>
+        <div class="coin red coin-1"></div>
+        <div class="coin white coin-2"></div>
+        <div class="coin black coin-3"></div>
+        <div class="coin white coin-4"></div>
+        <div class="coin black coin-5"></div>
+        <div class="coin white coin-6"></div>
+        <div class="coin black coin-7"></div>
+        <div class="coin white coin-8"></div>
+        <div class="coin black coin-9"></div>
+        <div class="lines"></div>
+    </div>
+</body>
+</html>
